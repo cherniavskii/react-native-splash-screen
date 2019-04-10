@@ -113,18 +113,18 @@ public class MainApplication extends Application implements ReactApplication {
 
 Update the `MainActivity.java` to use `react-native-splash-screen` via the following changes:
 
-```java
-import android.os.Bundle; // here
+```diff
++ import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 // react-native-splash-screen >= 0.3.1
-import org.devio.rn.splashscreen.SplashScreen; // here
++ import org.devio.rn.splashscreen.SplashScreen;
 // react-native-splash-screen < 0.3.1
-import com.cboy.rn.splashscreen.SplashScreen; // here
++ import com.cboy.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen.show(this);  // here
++        SplashScreen.show(this);  // here
         super.onCreate(savedInstanceState);
     }
     // ...other code
@@ -136,12 +136,12 @@ public class MainActivity extends ReactActivity {
 Update `AppDelegate.m` with the following additions:
 
 
-```obj-c
+```diff
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "RNSplashScreen.h"  // here
++ #import "RNSplashScreen.h"
 
 @implementation AppDelegate
 
@@ -149,7 +149,7 @@ Update `AppDelegate.m` with the following additions:
 {
     // ...other code
 
-    [RNSplashScreen show];  // here
++    [RNSplashScreen show];  // here
     // or
     //[RNSplashScreen showSplash:@"LaunchScreen" inRootView:rootView];
     return YES;
